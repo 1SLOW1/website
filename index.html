@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بروجكت بسيط</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: auto; 
+            background-color: #f0f0f0; 
+            font-family: 'Arial', sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0; 
+        }
+
+        @media (max-width: 600px) {
+            header, main, footer {
+                padding: 10px; 
+            }
+
+            #quiz-container h1 {
+                font-size: 18px; 
+            }
+        }
+
+        #backButton {
+            background-color: #800080; 
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease; 
+            cursor: pointer;
+        }
+
+        #backButton:hover {
+            background-color: #5e007f; 
+            transform: scale(1.05); 
+        }
+
+        #themeToggle {
+            transition: transform 0.3s ease; /* أنيميشين بسيطة */
+        }
+
+        #themeToggle:hover {
+            transform: scale(1.1); /* تكبير عند المرور */
+        }
+
+        .skills-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; 
+        }
+
+        .skill {
+            text-align: center;
+            width: 70px; 
+            margin: 5px; 
+            font-size: 12px; 
+            transition: transform 0.3s ease; /* إضافة أنيميشين */
+        }
+
+        .skill:hover {
+            transform: scale(1.1); /* تكبير عند المرور */
+        }
+
+        .skill img {
+            width: 40px; 
+            height: 40px; 
+            object-fit: contain; 
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #e6e6fa, #800080); 
+            height: 6px; 
+            border-radius: 5px; 
+            margin-top: 5px; 
+            transition: width 0.5s ease; 
+        }
+
+        .copyright {
+            text-align: center; 
+            font-size: 12px; 
+            color: #666; 
+            margin-top: 10px; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="left-section">
+            <button id="backButton">Back</button>
+        </div>
+        <div class="center-section">
+            <div id="score">Score: 0</div>
+        </div>
+        <div class="right-section">
+            <img id="themeToggle" src="https://img.icons8.com/ios-filled/50/000000/sun.png" alt="Toggle Theme" onclick="toggleTheme()">
+        </div>
+    </header>
+
+    <main>
+        <div id="quiz-container">
+            <h1 id="question">Question Here</h1>
+            <div id="options"></div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+
+        <div id="user-profile">
+            <img src="slow.jpg" alt="Image of slow elaqmar" id="profile-pic">
+            <p>زي ما انت شايف مفيش مهارات</p>
+        </div>
+
+        <div id="result" class="feedback"></div>
+    </main>
+
+    <footer>
+        <div class="skills-container">
+            <h2>No Skills</h2>
+            <div class="skills-box">
+                <div class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo">
+                    <span>HTML</span>
+                    <div class="progress-bar" style="width: 100%;"></div>
+                    <p>100%</p>
+                </div>
+                <div class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Logo">
+                    <span>CSS</span>
+                    <div class="progress-bar" style="width: 100%;"></div>
+                    <p>100%</p>
+                </div>
+                <div class="skill">
+                    <img src="https://img.icons8.com/?size=100&id=13441&format=png&color=000000" alt="Python Logo">
+                    <span>Python</span>
+                    <div class="progress-bar" style="width: 100%;"></div>
+                    <p>100%</p>
+                </div>
+                <div class="skill">
+                    <img src="https://nodejs.org/static/images/logo.svg" alt="Node.js Logo">
+                    <span>Node.js</span>
+                    <div class="progress-bar" style="width: 70%;"></div>
+                    <p>70%</p>
+                </div>
+                <div class="skill">
+                    <img src="https://img.icons8.com/?size=100&id=39858&format=png&color=000000" alt="Database Logo">
+                    <span>Database</span>
+                    <div class="progress-bar" style="width: 60%;"></div>
+                    <p>60%</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Copyright by SLOW 2024
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
